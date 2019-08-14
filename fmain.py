@@ -1,15 +1,11 @@
 import json
 import funcs
 import crud
-import os
 
 if __name__ == "__main__":
     user_id = 1001
 
     logic = funcs.Functions(user_id)
-    user = crud.mCRUD(user_id)
-
-    state = user.json_load()["state"]
 
     run = True
     while run:
