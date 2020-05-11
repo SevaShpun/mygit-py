@@ -1,10 +1,10 @@
 {
   "id": 1001,
   "res": {
-    "gold": 46,
+    "gold": 48,
     "wood": 30,
     "stone": 36,
-    "food": 91
+    "food": 89
   },
   "lvl": {
     "gold": 1,
