@@ -2,6 +2,7 @@ import crud
 import json
 import os
 
+
 class Functions(object):
 
     def __init__(self, user_id):
@@ -78,17 +79,17 @@ class Functions(object):
         user = db.json_load()
         res_gold = user["res"]["gold"]
         res_wood = user["res"]["wood"]
-        res_stone =user["res"]["stone"]
+        res_stone = user["res"]["stone"]
         res_food = user["res"]["food"]
         build_need = {
-            "gold": {"gold": 1000,"wood": 700, "stone": 800, "food": 200},
+            "gold": {"gold": 1000, "wood": 700, "stone": 800, "food": 200},
             "wood": {"gold": 700, "wood": 400, "stone": 500, "food": 120},
-            "stone":{"gold": 800, "wood": 600, "stone": 700, "food": 150},
+            "stone": {"gold": 800, "wood": 600, "stone": 700, "food": 150},
             "food": {"gold": 600, "wood": 300, "stone": 400, "food": 100}
         }
         need_res_gold = build_need[build]["gold"] * user["lvl"][build]
         need_res_wood = build_need[build]["wood"] * user["lvl"][build]
-        need_res_stone= build_need[build]["stone"] * user["lvl"][build]
+        need_res_stone = build_need[build]["stone"] * user["lvl"][build]
         need_res_food = build_need[build]["food"] * user["lvl"][build]
 
         if res_gold >= need_res_gold and res_wood >= need_res_wood and res_stone >= need_res_stone and res_food >= need_res_food:
@@ -105,4 +106,4 @@ class Functions(object):
 │золото:{} камень:{}
 │дерево:{} еда:{}
 └───────────────────────────""".format(str(need_res_gold), str(need_res_wood), str(need_res_stone), str(need_res_food))
-        return ""
+        return

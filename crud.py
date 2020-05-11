@@ -2,6 +2,7 @@ import funcs
 import json
 import os
 
+
 class mCRUD(object):
 
     def __init__(self, user_id):
@@ -13,7 +14,7 @@ class mCRUD(object):
         "gold": 0,
         "wood": 0,
         "stone": 0,
-        "food": 1
+        "food": 10
     },
     "lvl": {
         "gold": 1,
@@ -27,10 +28,10 @@ class mCRUD(object):
     def registration(self):
         logic = funcs.Functions(self.user_id)
         if os.path.exists("db/"+str(self.user_id)+".json"):
-            hello =  'Выберите действие!'
+            hello = 'Выберите действие!'
         else:
             hello = "Вы успешно зарегистрированы!"
-            with open("db/"+str(self.user_id)+".json","a+") as f:
+            with open("db/"+str(self.user_id)+".json", "a+") as f:
                 f.write(self.struct)
                 f.close()
         return hello
@@ -48,26 +49,28 @@ class mCRUD(object):
     def json_save(self, json_loads):
         json_dumps = json.dumps(json_loads, indent=2)
         if os.path.exists("db/"+str(self.user_id)+".json"):
-            with open("db/"+str(self.user_id)+".json","w+") as f:
+            with open("db/"+str(self.user_id)+".json", "w+") as f:
                 f.write(json_dumps)
                 f.close()
         return ""
 
     def getData(self, userid=False):
         uid = False
-        result = None;
-        if userid==False:
+        result = None
+        if userid == False:
             uid = self.user_id
             if os.path.exists("db/"+str(uid)+".json"):
                 with open("db/"+str(uid)+".json") as complex_data:
-                    result = json.dumps(json.loads(complex_data.read()), indent=4, sort_keys=True)
+                    result = json.dumps(json.loads(
+                        complex_data.read()), indent=4, sort_keys=True)
             else:
                 result = f"Пользователь '{uid}' не найден"
         else:
             uid = userid
             if os.path.exists("db/"+str(uid)+".json"):
                 with open("db/"+str(userid)+".json") as complex_data:
-                    result = json.dumps(json.loads(complex_data.read()), indent=4, sort_keys=True)
+                    result = json.dumps(json.loads(
+                        complex_data.read()), indent=4, sort_keys=True)
             else:
                 result = f"Пользователь '{uid}' не найден"
         return result
