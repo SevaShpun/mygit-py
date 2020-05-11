@@ -13,7 +13,7 @@ class mCRUD(object):
         "gold": 0,
         "wood": 0,
         "stone": 0,
-        "food": 0
+        "food": 1
     },
     "lvl": {
         "gold": 1,
@@ -36,8 +36,13 @@ class mCRUD(object):
         return hello
 
     def json_load(self):
-        with open("db/"+str(self.user_id)+".json") as complex_data:
-            data = complex_data.read()
+        try:
+            with open("db/"+str(self.user_id)+".json") as complex_data:
+                data = complex_data.read()
+        except:
+            self.registration()
+            with open("db/"+str(self.user_id)+".json") as complex_data:
+                data = complex_data.read()
         return json.loads(data)
 
     def json_save(self, json_loads):

@@ -1,16 +1,16 @@
 {
   "id": 1001,
   "res": {
-    "gold": 30296,
-    "wood": 1214,
-    "stone": 37,
-    "food": 1300
+    "gold": 46,
+    "wood": 30,
+    "stone": 36,
+    "food": 91
   },
   "lvl": {
     "gold": 1,
-    "wood": 2,
-    "stone": 2,
-    "food": 2
+    "wood": 1,
+    "stone": 1,
+    "food": 1
   },
   "state": "work"
 }
